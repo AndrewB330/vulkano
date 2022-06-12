@@ -121,11 +121,15 @@ pub use self::{
         ExternalSemaphoreHandleType, ExternalSemaphoreHandleTypes, ExternalSemaphoreInfo,
         ExternalSemaphoreProperties, Semaphore, SemaphoreCreateInfo, SemaphoreCreationError,
     },
+    future2::{
+        GpuFuture2, SwapchainAcquireFuture2, NowFuture2, now2
+    }
 };
 
 mod event;
 mod fence;
 mod future;
+mod future2;
 mod pipeline;
 mod semaphore;
 

@@ -17,15 +17,15 @@ use super::{AccessFlags, FenceWaitError, PipelineStages};
 use crate::{
     buffer::sys::UnsafeBuffer,
     command_buffer::{
-        submit::{
+        CommandBufferExecError,
+        CommandBufferExecFuture, PrimaryCommandBuffer, submit::{
             SubmitAnyBuilder, SubmitBindSparseError, SubmitCommandBufferError, SubmitPresentError,
         },
-        CommandBufferExecError, CommandBufferExecFuture, PrimaryCommandBuffer,
     },
     device::{DeviceOwned, Queue},
-    image::{sys::UnsafeImage, ImageLayout},
-    swapchain::{self, PresentFuture, PresentRegion, Swapchain},
-    DeviceSize, OomError,
+    DeviceSize,
+    image::{ImageLayout, sys::UnsafeImage},
+    OomError, swapchain::{self, PresentFuture, PresentRegion, Swapchain},
 };
 use std::{error, fmt, ops::Range, sync::Arc};
 

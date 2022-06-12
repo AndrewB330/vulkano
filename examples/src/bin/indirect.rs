@@ -20,7 +20,7 @@
 // However is does demonstrate that each compute instance atomically updates the vertex
 // counter before filling the vertex buffer.
 //
-// For an explanation of how the rendering of the triangles takes place see the `triangle.rs`
+// For an explanation of how the rendering of the triangles takes place see the `main`
 // example.
 //
 

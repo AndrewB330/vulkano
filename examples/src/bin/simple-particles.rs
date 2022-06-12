@@ -55,7 +55,7 @@ const PARTICLE_COUNT: usize = 100_000;
 
 fn main() {
     // The usual Vulkan initialization.
-    // Largely the same as example `triangle.rs` until further commentation is provided.
+    // Largely the same as example `main` until further commentation is provided.
     let required_extensions = vulkano_win::required_extensions();
     let instance = Instance::new(InstanceCreateInfo {
         enabled_extensions: required_extensions,

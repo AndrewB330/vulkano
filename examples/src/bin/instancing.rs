@@ -9,7 +9,7 @@
 
 // Welcome to the instancing example!
 //
-// This is a simple, modified version of the `triangle.rs` example that demonstrates how we can use
+// This is a simple, modified version of the `main` example that demonstrates how we can use
 // the "instancing" technique with vulkano to draw many instances of the triangle.
 
 use bytemuck::{Pod, Zeroable};
@@ -154,7 +154,7 @@ fn main() {
     };
 
     // We now create a buffer that will store the shape of our triangle.
-    // This triangle is identical to the one in the `triangle.rs` example.
+    // This triangle is identical to the one in the `main` example.
     let vertices = [
         Vertex {
             position: [-0.5, -0.25],

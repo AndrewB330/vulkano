@@ -44,6 +44,7 @@ use std::{
     },
     time::Duration,
 };
+use crate::sync::SwapchainAcquireFuture2;
 
 /// Contains the swapping system and the images that can be shown on a surface.
 #[derive(Debug)]
@@ -1373,7 +1374,7 @@ impl From<OomError> for FullScreenExclusiveError {
 pub fn acquire_next_image<W>(
     swapchain: Arc<Swapchain<W>>,
     timeout: Option<Duration>,
-) -> Result<(usize, bool, SwapchainAcquireFuture<W>), AcquireError> {
+) -> Result<(usize, bool, SwapchainAcquireFuture2<W>), AcquireError> {
     let semaphore = Semaphore::from_pool(swapchain.device.clone())?;
     let fence = Fence::from_pool(swapchain.device.clone())?;
 
@@ -1401,7 +1402,7 @@ pub fn acquire_next_image<W>(
     Ok((
         id,
         suboptimal,
-        SwapchainAcquireFuture {
+        SwapchainAcquireFuture2 {
             swapchain,
             semaphore: Some(semaphore),
             fence: Some(fence),
